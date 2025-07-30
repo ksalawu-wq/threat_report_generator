@@ -1,0 +1,91 @@
+2025-01-23 (THURSDAY): KOI LOADER/KOI STEALER ACTIVITY
+
+REFERENCES:
+
+- Original article: https://www-secrss-com/articles/73274
+- Google translation to English: https://www-secrss-com.translate.goog/articles/73274?_x_tr_sl=zh-CN&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=sc
+
+INFECTION CHAIN
+
+- unknown source --> Windows EXE --> script-based commands retrieve and run files for Koi Loader --> Koi Stealer activity
+
+INITIAL EXE:
+
+- SHA256 hash: e29d2bd946212328bcdf783eb434e1b384445f4c466c5231f91a07a315484819
+- File size: 2,263,752 bytes
+- File name: Unknown, but Metadata has file description as "Pringle Setup"
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+
+KOI LOADER/KOI STEALER TRAFFIC AFTER RUNNING ABOVE EXE:
+ 
+- http://79.124.78.109/wp-includes/neocolonialXAW.php
+- http://79.124.78.109/wp-includes/phyllopodan7V7GD.php
+- http://79.124.78.109/wp-includes/barasinghaby.ps1
+- http://79.124.78.109/wp-includes/guestwiseYtHA.exe
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/wp-includes/sd2.ps1
+- http://79.124.78.109/index.php?id=&subid=zweyWGzf
+- http://79.124.78.109/index.php
+- http://79.124.78.109/index.php?ver=64
+- http://79.124.78.109/index.php
+- http://79.124.78.109/index.php
+- http://79.124.78.109/index.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+- http://79.124.78.109/flocking.php
+
+  [and so on... The flocking.php URLs occur approximately every 60 seconds]
+
+PERSISTENCE:
+
+- Windows scheduled task:
+  - Command C:\Windows\System32\wscript.exe C:\ProgramData\r6eac11b8-35d6-bffe-da50-d9e1a5ae832ar.js
+
+PERSISTENT FILE:
+
+- SHA256 hash: a6bda80c9f914fb5b640d3437c264993b49a91d997562d53f5ba8d32ac979ec1
+- File size: 1,275 bytes
+- File location: C:\ProgramData\r6eac11b8-35d6-bffe-da50-d9e1a5ae832ar.js
+- File type: ASCII text, with very long lines, with CRLF line terminators
+- File description: Script file made persistent through the scheduled task
+
+FILES FROM THE C2 SERVER:
+
+- SHA256 hash: e69c34b9bad5d700c223dd80bfa26f27eea81f2c6522986ba6a042d52f7c8b86
+- File size: 7,345 bytes
+- File type: ASCII text, with very long lines, with CRLF line terminators
+- File location: http://79.124.78.109/wp-includes/barasinghaby.ps1
+
+- SHA256 hash: 94bf4f12cb8929037f6ee10d424d5a7ef5f193147312e22866dce4e0d56c2143
+- File size: 194,048 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File location: http://79.124.78.109/wp-includes/guestwiseYtHA.exe
+
+- SHA256 hash: ec04c79b87ac9542831895891f96108bd9cef11b7af54e20f65a04c99ee35610
+- File size: 1,275 bytes
+- File type: ASCII text, with very long lines, with CRLF line terminators
+- File location: http://79.124.78.109/wp-includes/neocolonialXAW.php
+
+- SHA256 hash: 07ddd7031ff2048a136789e6dc01212134d1ff2eacf0ece9faaf439ae2499198
+- File size: 260 bytes
+- File type: ASCII text, with CRLF line terminators
+- File location: http://79.124.78.109/wp-includes/phyllopodan7V7GD.php
+
+- SHA256 hash: 6c22132896a9899d9ca4f9e1845525930c348c6c92e033b3ce1344c9d25a7122
+- File size: 471,794 bytes
+- File type: ASCII text, with CRLF line terminators
+- File location: http://79.124.78.109/wp-includes/sd2.ps1
+
+.NET BINARY USED FOR KOI STEALER COMPONENT:
+
+- SHA256 hash: 324216d52072da8f62c744aa1802a11dce13b60fca974c27ad2e5c53455f84e6
+- File size: 77,824 bytes
+- File type: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
+- File description: .NET binary decoded from section in sd2.ps1 file.
